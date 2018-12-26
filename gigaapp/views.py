@@ -5,17 +5,18 @@ from .models import Hobby
 
 def index(request):
     #Home page
-    hobbies=Hobby.objects.order_by()
+    hobbies=Hobby.objects.order_by('text')
     context={'hobbies':hobbies}
     return render(request,'index.html',context)
 
 def about(request):
     #Page about author and contacts
-    hobbies=Hobby.objects.order_by()
+    hobbies=Hobby.objects.order_by('text')
     context={'hobbies':hobbies}
     return render(request,'about.html',context)
 
 def hobbies(request,hobby_id):
+    #Page about my hobbies
     hobby_name = Hobby.objects.get(id=hobby_id)
     hobbies=Hobby.objects.order_by()
     context={'hobbies':hobbies,'hobby_name':hobby_name}
