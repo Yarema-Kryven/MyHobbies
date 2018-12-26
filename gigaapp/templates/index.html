@@ -1,0 +1,14 @@
+﻿{% extends "base.html" %}
+{% block hobbies %}
+      </a>
+      <div class="dropdown-menu">
+	{% for hobby in hobbies %}
+        <a class="dropdown-item" href="{% url 'hobbies' hobby.id %}">{{ hobby }}</a>
+        {% endfor %}
+      </div>
+{% endblock hobbies %}
+{% block content %}
+<h1>Welcome!</h1><br>
+<p>With this application you can learn about my activities and hobbies.</p>
+<p>To learn more, find hobbies in navigation bar.</p>
+{% endblock content %}
