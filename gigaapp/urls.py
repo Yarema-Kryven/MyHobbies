@@ -19,5 +19,7 @@ from . import views
 urlpatterns = [
     re_path(r'^$',views.index,name='index'),
     re_path(r'^about/$', views.about,name='about'),
-    re_path(r'^hobbies/(?P<hobby_id>\d+)/$',views.hobbies,name='hobbies')
+    re_path(r'^hobbies/(?P<hobby_id>\d+)/$',views.hobbies,name='hobbies'),
+    re_path(r'^hobbies/(?P<hobby_id>\d+)/(?P<activity_id>\d+)/$',views.activities,name='activities')
+
 ]

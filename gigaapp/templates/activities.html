@@ -7,13 +7,15 @@
       </div>
 {% endblock hobbies %}
 {% block content %}
-<h1>{{hobby_name}}</h1><br>
-    {% for activity in activities %}
+<h1 style="font-size:200%;color:limegreen"> {{hobby_name}}</h1><br>
+<h1 style="color:red">{{activity_name}}</h1><br>
+    {% for event in events %}
     <li>
-    <a href="{% url 'activities' hobby_name.id activity.id %}">{{ activity }}</a>
+    <b>{{ event.event_date }}</b>
+    <p>{{ event.text|linebreaks }}</p>
     </li>
         {% empty %}
-        <p>At this page at future will be information about my activities in <b style="font-size:120%;color:red">{{hobby_name}}</b></p>
+        <p>Sorry, but there are no activities yet... =(</p>
         <p>To learn more, find hobbies in navigation bar.</p>
     {% endfor %}
 {% endblock content %}
